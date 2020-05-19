@@ -2,6 +2,12 @@
 
 Disable native change detection when Magento2 is on production mode to allow Zero Downtime Deployment (ZDD).
 
+Normal behavior:<br>
+![zdd](https://user-images.githubusercontent.com/16258478/82318767-b361cd80-99d0-11ea-86f2-7b032ad29744.png)
+
+With this module installed:<br>
+![zdd_module](https://user-images.githubusercontent.com/16258478/82321492-32590500-99d5-11ea-9c84-53756715e8d7.png)
+
 ## Installation
 ```
 composer require zepgram/module-zero-downtime-deployment
@@ -25,5 +31,9 @@ For example:
 The mainly steps to reach the ZDD with Magento2:
 1. Start the deployment: green pods are the old one, for now they must stay active while creating blue pods.
 1. Run `bin/magento setup:upgrade --keep-generated` to upgrade your database.
-1. Upgrading is done: now green pods must be killed and replaced by blue pods based on health check statement. 
+1. Upgrading is done: now green pods must be killed and replaced by blue pods based on health check statement.
 1. Even if cache has been already cleared by `bin/magento setup:upgrade` you must clean it again with `bin/magento cache:flush` because old pods may corrupt your cache.
+
+You can find a lot of articles detailling the procedure:
+- https://inviqa.com/blog/how-achieve-zero-downtime-deployments-magento-2
+- https://elogic.co/blog/how-to-achieve-zero-downtime-deployment-with-magento
