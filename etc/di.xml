@@ -15,7 +15,7 @@
     <type name="Magento\Deploy\Model\Plugin\ConfigChangeDetector">
         <arguments>
             <argument name="changeDetector" xsi:type="object">
-                Zepgram\ZeroDowntimeDeployment\Model\Plugin\ChangeDetector
+                Zepgram\ZeroDowntimeDeployment\Model\ChangeDetector
             </argument>
         </arguments>
     </type>
