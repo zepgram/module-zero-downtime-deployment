@@ -30,9 +30,9 @@ For example:
 
 The mainly steps to reach the ZDD with Magento2:
 1. Start the deployment: green pods are the old one, for now they must stay active while creating blue pods.
+1. You must set your blue pods to a dedicated redis database and keep the green pods on their own redis db (avoiding cache corrupting).
 1. Run `bin/magento setup:upgrade --keep-generated` to upgrade your database.
 1. Upgrading is done: now green pods must be killed and replaced by blue pods based on health check statement.
-1. Even if cache has been already cleared by `bin/magento setup:upgrade` you must clean it again with `bin/magento cache:flush` because old pods may corrupt your cache.
 
 You can find a lot of articles detailling the procedure:
 - https://inviqa.com/blog/how-achieve-zero-downtime-deployments-magento-2

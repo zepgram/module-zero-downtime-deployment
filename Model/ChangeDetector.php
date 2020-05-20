@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of Zepgram\ZeroDowntimeDeployment\Model\Plugin
+ * This file is part of Zepgram\ZeroDowntimeDeployment\Model
  *
  * @package    Zepgram\ZeroDowntimeDeployment
  * @file       ChangeDetector.php
@@ -13,7 +13,7 @@
 
 declare(strict_types=1);
 
-namespace Zepgram\ZeroDowntimeDeployment\Model\Plugin;
+namespace Zepgram\ZeroDowntimeDeployment\Model;
 
 use Magento\Deploy\Model\DeploymentConfig\ChangeDetector as MagentoChangeDetector;
 use Magento\Deploy\Model\DeploymentConfig\DataCollector;
