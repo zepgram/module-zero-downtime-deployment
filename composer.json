@@ -2,9 +2,9 @@
   "name": "zepgram/module-zero-downtime-deployment",
   "description": "Disable native change detection when Magento2 is on production mode to allow Zero Downtime Deployment (ZDD)",
   "type": "magento2-module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "require": {
-    "magento/framework": "^102.0.0",
+    "magento/framework": "^102.0.0|^103.0.0",
     "magento/module-deploy": "^100.2.0"
   },
   "autoload": {
