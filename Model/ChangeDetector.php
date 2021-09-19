@@ -19,7 +19,7 @@ use Magento\Deploy\Model\DeploymentConfig\ChangeDetector as MagentoChangeDetecto
 use Magento\Deploy\Model\DeploymentConfig\DataCollector;
 use Magento\Deploy\Model\DeploymentConfig\Hash;
 use Magento\Deploy\Model\DeploymentConfig\Hash\Generator as HashGenerator;
-use Magento\Framework\App\State;
+use Zepgram\ZeroDowntimeDeployment\Config\Flag;
 
 /**
  * Class ChangeDetector
@@ -27,23 +27,25 @@ use Magento\Framework\App\State;
  */
 class ChangeDetector extends MagentoChangeDetector
 {
-    /** @var State */
-    private $state;
+    /**
+     * @var Flag
+     */
+    private $flag;
 
     /**
      * ChangeDetector constructor.
      * @param Hash $configHash
      * @param HashGenerator $hashGenerator
      * @param DataCollector $dataConfigCollector
-     * @param State $state
+     * @param Flag $flag
      */
     public function __construct(
         Hash $configHash,
         HashGenerator $hashGenerator,
         DataCollector $dataConfigCollector,
-        State $state
+        Flag $flag
     ) {
-        $this->state = $state;
+        $this->flag = $flag;
         parent::__construct($configHash, $hashGenerator, $dataConfigCollector);
     }
 
@@ -53,7 +55,7 @@ class ChangeDetector extends MagentoChangeDetector
      */
     public function hasChanges($sectionName = null)
     {
-        if ($this->state->getMode() === State::MODE_PRODUCTION) {
+        if ($this->flag->isZeroDowntimeEnabled()) {
             return false;
         }
 

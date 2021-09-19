@@ -14,9 +14,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Deploy\Model\Plugin\ConfigChangeDetector">
         <arguments>
-            <argument name="changeDetector" xsi:type="object">
-                Zepgram\ZeroDowntimeDeployment\Model\ChangeDetector
-            </argument>
+            <argument name="changeDetector" xsi:type="object">Zepgram\ZeroDowntimeDeployment\Model\ChangeDetector</argument>
         </arguments>
     </type>
     <type name="Magento\Framework\Module\Plugin\DbStatusValidator">
