@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+* This file is part of Zepgram\ZeroDowntimeDeployment\etc
+*
+* @package    Zepgram\ZeroDowntimeDeployment
+* @file       config.xml
+* @date       19 09 2021 17:40
+*
+* @author     Benjamin Calef <zepgram@gmail.com>
+* @copyright  2021 Zepgram Copyright (c) (https://github.com/zepgram)
+* @license    MIT License
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <dev>
+            <zero_downtime_deployment>
+                <is_always_enabled>0</is_always_enabled>
+            </zero_downtime_deployment>
+        </dev>
+    </default>
+</config>

@@ -17,9 +17,9 @@ namespace Zepgram\ZeroDowntimeDeployment\Plugin;
 
 use Magento\Framework\App\FrontController;
 use Magento\Framework\App\RequestInterface;
-use Magento\Framework\App\State;
 use Magento\Framework\Cache\FrontendInterface as FrontendCacheInterface;
 use Magento\Framework\Module\Plugin\DbStatusValidator as MagentoDbStatusValidator;
+use Zepgram\ZeroDowntimeDeployment\Config\Flag;
 
 /**
  * Class DbStatusValidator
@@ -27,23 +27,27 @@ use Magento\Framework\Module\Plugin\DbStatusValidator as MagentoDbStatusValidato
  */
 class DbStatusValidator
 {
-    /** @var FrontendCacheInterface */
+    /**
+     * @var FrontendCacheInterface
+     */
     private $cache;
 
-    /** @var State */
-    private $state;
+    /**
+     * @var Flag
+     */
+    private $flag;
 
     /**
      * DbStatusValidator constructor.
      * @param FrontendCacheInterface $cache
-     * @param State $state
+     * @param Flag $flag
      */
     public function __construct(
         FrontendCacheInterface $cache,
-        State $state
+        Flag $flag
     ) {
         $this->cache = $cache;
-        $this->state = $state;
+        $this->flag = $flag;
     }
 
     /**
@@ -56,7 +60,7 @@ class DbStatusValidator
         FrontController $frontController,
         RequestInterface $request
     ) {
-        if ($this->state->getMode() === State::MODE_PRODUCTION) {
+        if ($this->flag->isZeroDowntimeEnabled()) {
             $this->cache->save('true', 'db_is_up_to_date');
         }
     }

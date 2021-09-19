@@ -1,6 +1,6 @@
 # Zero Downtime Deployment #
 
-Disable native change detection when Magento2 is on production mode to allow Zero Downtime Deployment (ZDD).
+Disable native change detection from Magento2 to allow Zero Downtime Deployment (ZDD).
 
 Normal behavior:<br>
 ![zdd](https://user-images.githubusercontent.com/16258478/82318767-b361cd80-99d0-11ea-86f2-7b032ad29744.png)
@@ -14,6 +14,15 @@ composer require zepgram/module-zero-downtime-deployment
 bin/magento module:enable Zepgram_ZeroDowntimeDeployment
 bin/magento setup:upgrade
 ```
+
+## Configuration
+
+By default, Zero Downtime is enabled on production mode and disabled on Magento's developer and default modes.<br>
+However, you can enable it for those modes from configuration path: `dev/zero_downtime_deployment/is_always_enabled`<br>
+![418](https://user-images.githubusercontent.com/16258478/133935969-7b38f61f-67e2-486c-9dd6-a836688704d5.png)
+> This section is only visible on developer mode from back-office
+
+For example, it can be useful to display errors when you roll-back your code while your database is ahead.
 
 ## Server
 
