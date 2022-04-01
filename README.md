@@ -2,8 +2,8 @@
 
 ## Magento 2.4.4 - @deprecated
 
-On version 2.4.4, Magento is able to handle blue/green deployment, making this module no more required to handle Zero Downtime Deployment.<br>
-To enable blue/green deployment you can add the config `deployment/blue_green/enabled` in your <b>app/etc/env.php</b>:
+On version 2.4.4, Magento is able to handle blue/green deployment, making this module no more required.<br>
+To enable <b>blue/green</b> deployment you can add the deployment config `deployment/blue_green/enabled` in file <b>app/etc/env.php</b>:
 ```php
 'deployment' => [
     'blue_green' => [
@@ -19,7 +19,7 @@ To enable blue/green deployment you can add the config `deployment/blue_green/en
 
 Related commit is here: https://github.com/magento/magento2/commit/c241e11adf59baeca9d9e66cdbd726e4b0b88b21
 
-&#9888; Consequently, this module is now deprecated and will not be maintained anymore.
+&#9888; Consequently, this module is now deprecated and will be not maintained anymore.
 
 ## Purpose
 
