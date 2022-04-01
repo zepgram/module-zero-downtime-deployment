@@ -1,5 +1,28 @@
 # Zero Downtime Deployment #
 
+## Magento 2.4.4 - @deprecated
+
+On version 2.4.4, Magento is able to handle blue/green deployment, making this module no more required to handle Zero Downtime Deployment.<br>
+To enable blue/green deployment you can add the config `deployment/blue_green/enabled` in your <b>app/etc/env.php</b>:
+```php
+'deployment' => [
+    'blue_green' => [
+        'enabled' => true
+    ]
+]
+```
+
+<b>magento/framework/Module/Plugin/DbStatusValidator.php</b>
+![image](https://user-images.githubusercontent.com/16258478/161338149-52febed8-d9b9-4e95-ba9d-60b999627aa5.png)
+<b>magento/module-deploy/Model/Plugin/ConfigChangeDetector.php</b>
+![image](https://user-images.githubusercontent.com/16258478/161338272-f72b6d73-3763-42d4-a684-1450a47290b8.png)
+
+Related commit is here: https://github.com/magento/magento2/commit/c241e11adf59baeca9d9e66cdbd726e4b0b88b21
+
+&#9888; Consequently, this module is now deprecated and will not be maintained anymore.
+
+## Purpose
+
 Disable native change detection from Magento2 to allow Zero Downtime Deployment (ZDD).
 
 Normal behavior:<br>
