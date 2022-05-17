@@ -19,7 +19,7 @@ To enable <b>blue/green</b> deployment you can add the deployment config `deploy
 
 Related commit is here: https://github.com/magento/magento2/commit/c241e11adf59baeca9d9e66cdbd726e4b0b88b21
 
-&#9888; Consequently, this module is now deprecated and will be not maintained anymore.
+&#9888; Consequently, this module is now deprecated.
 
 ## Purpose
 
